@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "655806781786",
+    "project_id": "qr-code-app-pro-d3dbe",
+    "storage_bucket": "qr-code-app-pro-d3dbe.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:655806781786:android:c56c93ce798a73adc97b63",
+        "android_client_info": {
+          "package_name": "com.example.qr_order_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdyopwaGhppXZhxzKVAtB1USFY-pKR8T0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
