@@ -48,5 +48,5 @@ firebase deploy
 
 # 3. Lưu trữ mã nguồn
 git add .
-git commit -m "Hoàn thiện app Coffee QR-Order với đầy đủ tính năng"
+git commit -m ""
 git push origin main

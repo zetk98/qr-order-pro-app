@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'orders_tab.dart';
 import 'products_tab.dart';
+import 'category_tab.dart'; // Đảm bảo bạn đã tạo file này
 
 class AdminMainScreen extends StatelessWidget {
   const AdminMainScreen({super.key});
 
-  // Tông màu đồng bộ với Welcome và Menu
+  // Tông màu đồng bộ
   final Color coffeeDark = const Color(0xFF4E342E);
   final Color coffeePrimary = const Color(0xFF6F4E37);
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3, // Sửa từ 2 thành 3 để có thêm tab Danh mục
       child: Scaffold(
-        backgroundColor: Colors.brown[50], // Nền sáng dễ nhìn cho Admin
+        backgroundColor: Colors.brown[50],
         appBar: AppBar(
           elevation: 4,
           shadowColor: coffeeDark.withOpacity(0.5),
@@ -31,40 +32,47 @@ class AdminMainScreen extends StatelessWidget {
           centerTitle: true,
           iconTheme: const IconThemeData(color: Colors.white),
           bottom: TabBar(
-            // Hiệu ứng thanh chỉ báo Tab mượt hơn
             indicatorColor: Colors.white,
             indicatorWeight: 4,
             indicatorSize: TabBarIndicatorSize.label,
-            labelStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+            labelStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13), // Chỉnh nhỏ lại một chút để vừa 3 tab
             unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.normal),
             labelColor: Colors.white,
             unselectedLabelColor: Colors.white70,
             tabs: const [
               Tab(
-                child: Row(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.assignment_rounded),
-                    SizedBox(width: 8),
+                    Icon(Icons.assignment_rounded, size: 20),
+                    SizedBox(height: 4),
                     Text("ĐƠN HÀNG"),
                   ],
                 ),
               ),
               Tab(
-                child: Row(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.coffee_maker_rounded),
-                    SizedBox(width: 8),
+                    Icon(Icons.coffee_maker_rounded, size: 20),
+                    SizedBox(height: 4),
                     Text("SẢN PHẨM"),
+                  ],
+                ),
+              ),
+              Tab(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.category_rounded, size: 20),
+                    SizedBox(height: 4),
+                    Text("DANH MỤC"),
                   ],
                 ),
               ),
             ],
           ),
         ),
-        // Sử dụng AnimatedBuilder hoặc đơn giản là TabBarView với hiệu ứng mặc định
-        // Nếu muốn hiệu ứng mạnh hơn, ta bọc trong AnimatedSwitcher
         body: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -74,11 +82,11 @@ class AdminMainScreen extends StatelessWidget {
             ),
           ),
           child: const TabBarView(
-            // Hiệu ứng vật lý khi vuốt giữa các tab
             physics: BouncingScrollPhysics(),
             children: [
               OrdersTab(),
               ProductsTab(),
+              CategoryTab(), // Thêm màn hình quản lý danh mục vào đây
             ],
           ),
         ),
